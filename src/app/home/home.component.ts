@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../environments/environment';
-import { Observable, of } from 'rxjs';
+import { secret } from '../../../secret';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +18,7 @@ export class HomeComponent implements OnInit {
   }
 
   submit() {
-    const { catApiKey } = environment;
+    const { catApiKey } = secret;
     console.log({ catApiKey });
     this.searchCats(this.query).then((data) => {
       console.log(data);
@@ -29,7 +28,7 @@ export class HomeComponent implements OnInit {
   async searchCats(name: string) {
     const apiUrl = `https://api.thecatapi.com/v1/images/search?limit=6&size=full&name=${name}`;
     let headers = new HttpHeaders();
-    headers = headers.append('x-api-key', environment.catApiKey);
+    headers = headers.append('x-api-key', secret.catApiKey);
     return this.http.get(apiUrl, { headers }).toPromise();
   }
 
