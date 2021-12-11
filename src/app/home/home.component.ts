@@ -8,21 +8,25 @@ import { secret } from '../../../secret';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public query: string = 'Cat';
+  public query: string = 'persian';
+  public cats: any = [];
 
   constructor(
-    private http: HttpClient,
+    private http: HttpClient
   ) { }
 
   ngOnInit() {
   }
 
   submit() {
-    const { catApiKey } = secret;
-    console.log({ catApiKey });
-    this.searchCats(this.query).then((data) => {
-      console.log(data);
-    });
+    if (this.query) {
+      this.searchCats(this.query).then((data) => {
+        console.log(data);
+        this.cats = data;
+      });
+    } else {
+      this.cats = [];
+    }
   }
 
   async searchCats(name: string) {

@@ -1,11 +1,37 @@
-<div class="header clearfix">
-  <div class="logo-container">
-    <img src="../../assets/images/cat-logo.png" style="width:100%">
+<div class="header-wrapper">
+  <div class="header clearfix">
+    <div class="logo-container">
+      <img src="../../assets/images/cat-logo.png" style="width:100%">
+    </div>
+    <h1 class="title"> The Cat's Fun Club! </h1>
+    <div class="form">
+      <input type="text" id="query" name="query" placeholder="Enter Cat Breed" [(ngModel)]="query"/> <br>
+      <input type="submit" value="Search" (click)="submit()">
+    <div>
   </div>
-  <h1 class="title"> The Cat's Fun Club! </h1>
-  <div class="form">
-    <input type="text" id="query" name="query" placeholder="Search Cat Breed" [(ngModel)]="query"/> <br>
-    <input type="submit" value="Search" (click)="submit()">
-  <div>
 </div>
-
+<div class="content-wrapper">
+  <div class="content">
+    <h2>Results for the Cat Search: </h2>
+    <div class="cats-images-container" *ngIf="cats.length == 6">
+      <div class="cats-images-row">
+        <div class="cat-image-box" *ngFor="let i of [0, 1, 2, 3, 4]">
+          <div class="cat-image-holder">
+            <img src="{{cats[i].url}}" class="cat-image">
+          </div>
+        </div>
+      </div>
+      <div class="cats-images-row">
+        <div class="cat-image-box" *ngFor="let i of [5]">
+          <div class="cat-image-holder">
+            <img src="{{cats[i].url}}" class="cat-image">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="no-result-container" *ngIf="cats.length == 0">
+      <h2> Ooops currently there is no result.</h2>
+      <h2> Please enter cat breed.</h2>
+    </div>
+  </div>
+</div>
