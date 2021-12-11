@@ -8,21 +8,27 @@ import { secret } from '../../../secret';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public query: string = 'persian';
+  public query: string = '';
   public cats: any = [];
+  public isLoading: boolean = false;
 
   constructor(
     private http: HttpClient
   ) { }
 
   ngOnInit() {
+    this.isLoading = false;
+    this.cats = [];
+    this.query = '';
   }
 
   submit() {
     if (this.query) {
+      this.isLoading = true;
       this.searchCats(this.query).then((data) => {
         console.log(data);
         this.cats = data;
+        this.isLoading = false;
       });
     } else {
       this.cats = [];

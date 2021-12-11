@@ -96,3 +96,9 @@ img.cat-image {
   text-align: center;
   color: red;
 }
+
+img.spinner {
+  width:20%;
+  margin: 20px auto;
+  display: block;
+}
