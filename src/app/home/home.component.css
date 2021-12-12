@@ -5,7 +5,7 @@
 }
 
 .header {
-  width: 95%;
+  width: 1200px;
   height: 150px;
   margin: auto;
   padding: 20px 20px;
@@ -24,7 +24,7 @@
 .title {
   width: 550px;
   height: 100px;
-  margin: 10px 60px 10px 150px;
+  margin: 10px 30px 10px 80px;
   padding: 30px 20px 0px 20px;
   border-radius: 10px;
   text-align: center;
@@ -37,7 +37,7 @@
 .form {
   width: 300px;
   height: 150px;
-  float: left;
+  float: right;
 }
 
 input[type=text] {
@@ -45,7 +45,7 @@ input[type=text] {
   height: 40px;
   margin: 15px 0px 0px 0px;
   padding: 5px 20px;
-  font-size: 20px;
+  font-size: 18px;
   border: 2px solid grey;
   border-radius: 20px;
 }
@@ -55,7 +55,8 @@ input[type=submit] {
   height: 50px;
   margin: 15px 0px 0px 0px;
   padding: 8px 20px;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: bold;
   border: 2px solid grey;
   border-radius: 20px;
   background-color: #6495ED;
@@ -67,27 +68,31 @@ input[type=submit] {
   margin-top: 190px;
   margin-left: -20px;
   padding: 5px 20px;
+  text-align: center;
+}
+
+.cats-images-container {
+  margin: 0px auto;
 }
 
 .cats-images-row {
   display: flex;
+  flex-wrap: nowrap;
   width: 95%;
   margin: 10px auto;
   padding: 10px 20px;
 }
 
-.cat-image-box {
-  width: 200px;
+.cats-images-row .cat-image-box {
   margin: 10px 20px;
-  text-align: center;
 }
 
 .cat-image-holder {
-  width: 200px;
+  width: 340px;
 }
 
 img.cat-image {
-  width: 200px;
+  width: 300px;
   box-shadow: 0px 0px 3px 3px grey;
 }
 
@@ -97,8 +102,14 @@ img.cat-image {
   color: red;
 }
 
+.spinner: {
+  margin: 30px auto;
+  width: 100%;
+  border: 1px solid black;
+}
+
 img.spinner {
-  width:20%;
-  margin: 20px auto;
+  width: 20%;
+  margin: 250px auto;
   display: block;
 }

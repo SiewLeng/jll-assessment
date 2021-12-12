@@ -11,25 +11,25 @@
   </div>
 </div>
 <div class="content-wrapper">
-  <div class="content">
-    <h2>Results for the Cat Search: </h2>
-    <div class="cats-images-container" *ngIf="cats.length == 6 && !isLoading">
+  <div class="content" *ngIf="!isLoading">
+    <div class="cats-images-container" *ngIf="cats.length == 6">
+      <h2>Results for the Cat Search </h2>
       <div class="cats-images-row">
-        <div class="cat-image-box" *ngFor="let i of [0, 1, 2, 3, 4]">
+        <div class="cat-image-box" *ngFor="let i of [0, 1, 2]">
           <div class="cat-image-holder">
             <img src="{{cats[i].url}}" class="cat-image">
           </div>
         </div>
       </div>
       <div class="cats-images-row">
-        <div class="cat-image-box" *ngFor="let i of [5]">
+        <div class="cat-image-box" *ngFor="let i of [3, 4, 5]">
           <div class="cat-image-holder">
             <img src="{{cats[i].url}}" class="cat-image">
           </div>
         </div>
       </div>
     </div>
-    <div class="no-result-container" *ngIf="cats.length == 0 && !isLoading">
+    <div class="no-result-container" *ngIf="cats.length == 0">
       <h2> Ooops currently there is no result.</h2>
       <h2> Please enter cat breed.</h2>
     </div>
