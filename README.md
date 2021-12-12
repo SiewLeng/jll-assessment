@@ -12,3 +12,7 @@ Run `npm install` to install the node module library.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
+## Demonstration of the code.
+
+Nagivate to `https://jll-assessment.herokuapp.com/home`.
+
